@@ -115,7 +115,7 @@
           <p class="mt-4"><strong>Note:</strong> ${message}</p>
           <div class="mt-6 flex justify-between">
             <button id="printReceipt" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Print Receipt</button>
-            <button id="downloadReceipt" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">Download Receipt</button>
+            <button id="downloadReceipt" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors flex gap-2"><img src="images/icons/download.png" alt="Download" class="w-6 h-6">Download Receipt</button>
           </div>
           <button id="closeModal" class="mt-4 w-full bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition-colors">Close</button>
         </div>
