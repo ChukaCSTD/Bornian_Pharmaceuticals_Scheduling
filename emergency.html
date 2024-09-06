@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Diagnosis - Bornian Pharmaceuticals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('images/emergency.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center">
+    <nav class="fixed top-0 left-0 right-0 z-50  text-slate-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center pl-[600px]">
+                <img src="images/logo.png" alt="Bornian Pharmaceuticals Logo" class="h-16 mr-2">
+                <span class="font-bold text-xl">Bornian Pharmaceuticals</span>
+            </a>
+            <ul class="flex space-x-20 text-xl pr-20">
+                <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
+                <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
+                <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="app" class="w-full max-w-md ml-24">
+        <div class="content-wrapper p-8">
+            <!-- The diagnos.js script will populate this div -->
+        </div>
+    </div>
+    
+    <script src="diagnos.js"></script>
+</body>
+</html>
