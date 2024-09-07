@@ -78,24 +78,86 @@
           display: none;
           text-align: center;
         }
+        
+        @media (max-width: 768px) {
+            #welcomebox {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            nav .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+        }
     </style>
 
 </head>
 
 <body onload="myFunction()">
-  <nav class="fixed top-0 left-0 right-0 z-50 text-slate-700 p-4">
+  <nav class="sm:hidden md:hidden fixed top-0 left-0 right-0 z-50 text-slate-700 p-4">
     <div class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="flex items-center pl-20">
+        <a href="index.html" class="flex items-center">
             <img src="images/logo.png" alt="Bornian Pharmaceuticals Logo" class="h-16 mr-2">
             <span class="font-bold text-xl">Bornian Pharmaceuticals</span>
         </a>
-        <ul class="flex space-x-20 text-xl pr-20">
+        <ul class="sm:hidden md:hidden desktop-menu flex space-x-8 text-xl">
+            <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
+            <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
+            <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
+        </ul>
+        <button id="menuBtn" class="md:hidden">
+            <img src="images/icons/menu.png" alt="Menu" class="h-8">
+        </button>
+    </div>
+  </nav>
+
+    <div id="sidebar" class="sidebar">
+        <ul class="flex flex-col space-y-4 p-4 text-xl">
             <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
             <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
             <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
         </ul>
     </div>
-  </nav>
+
+    <div id="overlay" class="overlay"></div>
 
     <div style="background-image: url('images/medic.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div id="loader"></div>
@@ -130,6 +192,20 @@
           document.getElementById("loader").style.display = "none";
           document.getElementById("container").style.display = "block";
         }
+
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.style.display = 'none';
+        });
     </script>
 </body>
 </html>

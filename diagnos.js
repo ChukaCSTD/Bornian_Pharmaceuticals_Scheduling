@@ -73,7 +73,7 @@
   // Initialization
   const init = () => {
     $('.content-wrapper').innerHTML = `
-      <h1 class="text-3xl font-bold mb-6 text-center text-red-800">Emergency Diagnosis</h1>
+      <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center text-red-800">Emergency Diagnosis</h1>
       <div class="max-w-md mx-auto">
         <p class="mb-4 text-gray-700">Select your primary symptom for an emergency diagnosis and prescription.</p>
         ${EmergencyForm()}

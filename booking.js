@@ -93,13 +93,13 @@
     };
   
     const AppointmentForm = () => `
-      <div class="space-y-4">
+      <div class="space-y-4 max-w-md mx-auto">
         <h2 class="text-xl font-semibold">Select a Physician</h2>
         ${PhysicianSelect()}
         <h2 class="text-xl font-semibold">Select a Date</h2>
         <div id="calendar"></div>
         <h2 class="text-xl font-semibold">Select a Time</h2>
-        <input type="time" id="timeInput" class="w-30 p-2 border rounded" required>
+        <input type="time" id="timeInput" class="w-full p-2 border rounded" required>
         <button id="bookAppointment" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors">Schedule an Appointment</button>
       </div>
     `;
@@ -208,12 +208,12 @@
     // Initialization
     const init = () => {
       $('#app').innerHTML = `
-        <div class="flex min-h-screen">
-          <div class="w-1/2 bg-white bg-opacity-90 p-8 overflow-y-auto">
-            <h1 class="text-3xl font-bold mb-6 text-center text-blue-800">Physician Appointment Scheduling</h1>
+        <div class="flex flex-col md:flex-row min-h-screen">
+          <div class="w-full md:w-1/2 bg-white bg-opacity-90 p-4 md:p-8 overflow-y-auto">
+            <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center text-blue-800">Physician Appointment Scheduling</h1>
             <div id="appointmentForm"></div>
           </div>
-          <div class="w-1/2"></div>
+          <div class="w-full md:w-1/2"></div>
         </div>
       `;
       $('#appointmentForm').innerHTML = AppointmentForm();

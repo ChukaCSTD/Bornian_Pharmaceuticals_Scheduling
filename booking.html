@@ -13,24 +13,87 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            #app {
+                padding-left: 0;
+                padding-top: 6rem;
+            }
+            .desktop-menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="fixed top-0 left-0 right-0 z-50  text-slate-700 p-4">
+    <nav class=" sm:hidden md:hidden fixed top-0 left-0 right-0 z-50 text-slate-700 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center pl-20">
+            <a href="index.html" class="flex items-center">
                 <img src="images/logo.png" alt="Bornian Pharmaceuticals Logo" class="h-16 mr-2">
                 <span class="font-bold text-xl">Bornian Pharmaceuticals</span>
             </a>
-            <ul class="flex space-x-20 text-xl pr-20">
+            <ul class="desktop-menu  sm:hidden md:hidden flex space-x-8 text-xl">
                 <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
                 <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
                 <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
             </ul>
+            <button id="menuBtn" class="md:hidden">
+                <img src="images/menu.png" alt="Menu" class="h-8">
+            </button>
         </div>
     </nav>
 
-    <div class="pl-20 pt-20" id="app"></div>
+    <div id="sidebar" class="sidebar">
+        <ul class="flex flex-col space-y-4 p-4 text-xl">
+            <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
+            <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
+            <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
+        </ul>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div class="pt-24 px-4" id="app"></div>
     <script src="booking.js"></script>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
