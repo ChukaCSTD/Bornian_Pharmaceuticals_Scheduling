@@ -13,19 +13,46 @@
       return `${year}-${month}-${day}`;
     };
   
-    // Data (copied from bornian.js)
+    // Data
     const physicians = [
-      { id: 1, name: 'Dr. Abdul', specialization: 'General Practice', availableDays: ['Monday', 'Wednesday', 'Friday'] },
-      { id: 2, name: 'Dr. Jackson', specialization: 'Cardiology', availableDays: ['Tuesday', 'Thursday'] },
-      { id: 3, name: 'Dr. Brown', specialization: 'Pediatrics', availableDays: ['Monday', 'Wednesday', 'Friday'] },
-      { id: 4, name: 'Dr. Ayo', specialization: 'Dermatology', availableDays: ['Tuesday', 'Thursday'] },
-      { id: 5, name: 'Dr. Fred', specialization: 'Orthopedics', availableDays: ['Monday', 'Wednesday', 'Friday'] },
-      { id: 6, name: 'Dr. Samad', specialization: 'Neurology', availableDays: ['Tuesday', 'Thursday'] },
-      { id: 7, name: 'Dr. Hauwa', specialization: 'Gastroenterology', availableDays: ['Monday', 'Wednesday', 'Friday'] },
-      { id: 8, name: 'Dr. Anne', specialization: 'Urology', availableDays: ['Tuesday', 'Thursday'] },
-      { id: 9, name: 'Dr. Jennifer', specialization: 'Endocrinology', availableDays: ['Monday', 'Wednesday', 'Friday'] },
-      { id: 10, name: 'Dr. Dami', specialization: 'Psychiatry', availableDays: ['Tuesday', 'Thursday'] },
-      { id: 11, name: 'Dr. David', specialization: 'Dentistry', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 1, name: 'Dr. Abdul', specialization: 'General Practice - full body care and treatment', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 2, name: 'Dr. Jackson', specialization: 'Cardiology - heart care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 3, name: 'Dr. Brown', specialization: 'Pediatrics - child care and health', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 4, name: 'Dr. Ayo', specialization: 'Dermatology - skin care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 5, name: 'Dr. Fred', specialization: 'Orthopedics - bone care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 6, name: 'Dr. Samad', specialization: 'Neurology - brain care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 7, name: 'Dr. Hauwa', specialization: 'Gastroenterology - stomach care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 8, name: 'Dr. Anne', specialization: 'Urology - bladder care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 9, name: 'Dr. Jennifer', specialization: 'Endocrinology - hormone care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 10, name: 'Dr. Dami', specialization: 'Psychiatry - mental health care and counseling', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 11, name: 'Dr. David', specialization: 'Dentistry - teeth care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 12, name: 'Dr. John', specialization: 'Dentistry - teeth care', availableDays: ['Monday', 'Thursday', 'Friday'] },
+      { id: 13, name: 'Dr. James', specialization: 'General Practice - full body care and treatment', availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Friday'] },
+      { id: 14, name: 'Dr. Sarah', specialization: 'Ophthalmology - eye care', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 15, name: 'Dr. Michael', specialization: 'Oncology - cancer treatment', availableDays: ['Monday', 'Thursday'] },
+      { id: 16, name: 'Dr. Emily', specialization: 'Gynecology - women\'s health', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 17, name: 'Dr. Robert', specialization: 'Pulmonology - lung care', availableDays: ['Monday', 'Thursday'] },
+      { id: 18, name: 'Dr. Lisa', specialization: 'Rheumatology - joint and autoimmune disorders', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 19, name: 'Dr. Kevin', specialization: 'Nephrology - kidney care', availableDays: ['Monday', 'Thursday'] },
+      { id: 20, name: 'Dr. Rachel', specialization: 'Allergy and Immunology - allergy treatment', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 21, name: 'Dr. Emma', specialization: 'Cardiology - heart care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 22, name: 'Dr. Oliver', specialization: 'Pediatrics - child care and health', availableDays: ['Tuesday', 'Thursday', 'Saturday'] },
+      { id: 23, name: 'Dr. Sophia', specialization: 'Dermatology - skin care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 24, name: 'Dr. Liam', specialization: 'Orthopedics - bone care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 25, name: 'Dr. Ava', specialization: 'Neurology - brain care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 26, name: 'Dr. Noah', specialization: 'Gastroenterology - stomach care', availableDays: ['Tuesday', 'Thursday', 'Saturday'] },
+      { id: 27, name: 'Dr. Isabella', specialization: 'Urology - bladder care', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 28, name: 'Dr. Ethan', specialization: 'Endocrinology - hormone care', availableDays: ['Tuesday', 'Thursday'] },
+      { id: 29, name: 'Dr. Mia', specialization: 'Psychiatry - mental health care and counseling', availableDays: ['Monday', 'Wednesday', 'Friday'] },
+      { id: 30, name: 'Dr. William', specialization: 'Dentistry - teeth care', availableDays: ['Tuesday', 'Thursday', 'Saturday'] },
+      { id: 31, name: 'Dr. Charlotte', specialization: 'General Practice - full body care and treatment', availableDays: ['Monday', 'Tuesday', 'Thursday'] },
+      { id: 32, name: 'Dr. Benjamin', specialization: 'Ophthalmology - eye care', availableDays: ['Monday', 'Thursday', 'Friday'] },
+      { id: 33, name: 'Dr. Amelia', specialization: 'Oncology - cancer treatment', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 34, name: 'Dr. Lucas', specialization: 'Gynecology - women\'s health', availableDays: ['Monday', 'Thursday'] },
+      { id: 35, name: 'Dr. Harper', specialization: 'Pulmonology - lung care', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 36, name: 'Dr. Evelyn', specialization: 'Rheumatology - joint and autoimmune disorders', availableDays: ['Monday', 'Thursday', 'Saturday'] },
+      { id: 37, name: 'Dr. Mason', specialization: 'Nephrology - kidney care', availableDays: ['Tuesday', 'Wednesday', 'Friday'] },
+      { id: 38, name: 'Dr. Abigail', specialization: 'Allergy and Immunology - allergy treatment', availableDays: ['Monday', 'Thursday'] }
       // ... (other physicians)
     ];
   
@@ -35,15 +62,30 @@
     // State
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
-    let selectedPhysician = physicians[0];
+    let selectedPhysician = null;
     let selectedDate = null;
+    let bookedAppointments = {}; // Store booked appointments
   
     // Components
-    const PhysicianSelect = () => `
-      <select id="physicianSelect" class="w-full p-2 border rounded">
-        ${physicians.map(p => `<option value="${p.id}">${p.name} - ${p.specialization}</option>`).join('')}
-      </select>
-    `;
+    const SpecializationSelect = () => {
+      const specializations = [...new Set(physicians.map(p => p.specialization))];
+      return `
+        <select id="specializationSelect" class="w-full p-2 border rounded">
+          <option value="">Select a specialization</option>
+          ${specializations.map(s => `<option value="${s}">${s}</option>`).join('')}
+        </select>
+      `;
+    };
+  
+    const PhysicianSelect = (specialization) => {
+      const filteredPhysicians = physicians.filter(p => p.specialization === specialization);
+      return `
+        <select id="physicianSelect" class="w-full p-2 border rounded">
+          <option value="">Select a physician</option>
+          ${filteredPhysicians.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}
+        </select>
+      `;
+    };
   
     const Calendar = (physician, year, month) => {
       const getDaysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
@@ -72,13 +114,14 @@
       for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month, day);
         const dayName = date.toLocaleString('en-us', {weekday: 'long'});
-        const isAvailable = physician.availableDays.includes(dayName);
+        const formattedDate = formatDate(date);
+        const isAvailable = physician.availableDays.includes(dayName) && !isDateBooked(physician.id, formattedDate);
         const cellClass = isAvailable
           ? 'bg-green-100 hover:bg-green-200 cursor-pointer'
           : 'bg-gray-100 text-gray-400 cursor-not-allowed';
   
         calendarHTML += `
-          <div class="${cellClass} text-center py-2 text-sm" data-date="${formatDate(date)}" ${isAvailable ? '' : 'disabled'}>
+          <div class="${cellClass} text-center py-2 text-sm" data-date="${formattedDate}" ${isAvailable ? '' : 'disabled'}>
             ${day}
           </div>
         `;
@@ -94,13 +137,17 @@
   
     const AppointmentForm = () => `
       <div class="space-y-4 max-w-md mx-auto">
+        <h2 class="text-xl font-semibold">Choose a Physician Basesd on Your Symptoms</h2>
+        ${SpecializationSelect()}
         <h2 class="text-xl font-semibold">Select a Physician</h2>
-        ${PhysicianSelect()}
+        <div id="physicianSelectContainer"></div>
         <h2 class="text-xl font-semibold">Select a Date</h2>
         <div id="calendar"></div>
         <h2 class="text-xl font-semibold">Select a Time</h2>
-        <input type="time" id="timeInput" class="w-full p-2 border rounded" required>
-        <button id="bookAppointment" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors">Schedule an Appointment</button>
+        <input type="time" id="timeInput" class="p-2 border rounded" required>
+        <br>
+        <br>
+        <button id="bookAppointment" class="w-[300px] flex justify-center items-center m-auto bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors">Schedule an Appointment</button>
       </div>
     `;
   
@@ -123,6 +170,15 @@
     `;
   
     // Event handlers
+    const handleSpecializationChange = (e) => {
+      const specialization = e.target.value;
+      $('#physicianSelectContainer').innerHTML = PhysicianSelect(specialization);
+      $('#physicianSelect').addEventListener('change', handlePhysicianChange);
+      selectedPhysician = null;
+      selectedDate = null;
+      updateCalendar();
+    };
+  
     const handlePhysicianChange = (e) => {
       selectedPhysician = physicians.find(p => p.id === parseInt(e.target.value));
       selectedDate = null;
@@ -140,26 +196,43 @@
     const handleAppointmentSubmit = () => {
       const time = $('#timeInput').value;
       
-      if (!selectedDate || !time) {
-        alert('Please select a date and time for your appointment.');
+      if (!selectedPhysician || !selectedDate || !time) {
+        alert('Please select a physician, date, and time for your appointment.');
         return;
       }
       
-      const selectedDay = new Date(selectedDate).toLocaleString('en-us', {weekday: 'long'});
-      const isAvailableDay = selectedPhysician.availableDays.includes(selectedDay);
-      
-      let message = `Appointment booked with ${selectedPhysician.name} on ${selectedDate} at ${time}.`;
-      if (!isAvailableDay) {
-        message += "\n\nNote: If the selected date is rather full for this physician, you may experience longer wait times or potential rescheduling.";
+      if (isDateBooked(selectedPhysician.id, selectedDate)) {
+        alert('This physician already has an appointment on this date. Please select a different date.');
+        return;
       }
       
+      // Book the appointment
+      bookAppointment(selectedPhysician.id, selectedDate, time);
+      
+      const message = `Appointment booked with ${selectedPhysician.name} on ${selectedDate} at ${time}.`;
       $('#app').insertAdjacentHTML('beforeend', ReceiptModal(selectedPhysician, selectedDate, time, message));
       setupModalHandlers();
+      
+      // Clear the form after successful booking
+      resetForm();
     };
   
+    // New function to reset the form
+    const resetForm = () => {
+      $('#specializationSelect').value = '';
+      $('#physicianSelectContainer').innerHTML = '';
+      $('#calendar').innerHTML = '<p>Please select a physician to view available dates.</p>';
+      $('#timeInput').value = '';
+      selectedPhysician = null;
+      selectedDate = null;
+      updateCalendar();
+    };
+  
+    // Modify setupModalHandlers to include form reset when closing the modal
     const setupModalHandlers = () => {
       $('#closeModal').addEventListener('click', () => {
         $('#receiptModal').remove();
+        resetForm();
       });
   
       $('#printReceipt').addEventListener('click', () => {
@@ -181,8 +254,12 @@
     };
   
     const updateCalendar = () => {
-      $('#calendar').innerHTML = Calendar(selectedPhysician, currentYear, currentMonth);
-      setupCalendarNavigation();
+      if (selectedPhysician) {
+        $('#calendar').innerHTML = Calendar(selectedPhysician, currentYear, currentMonth);
+        setupCalendarNavigation();
+      } else {
+        $('#calendar').innerHTML = '<p>Please select a physician to view available dates.</p>';
+      }
     };
   
     const setupCalendarNavigation = () => {
@@ -205,11 +282,23 @@
       });
     };
   
+    // Helper functions for appointment booking
+    const isDateBooked = (physicianId, date) => {
+      return bookedAppointments[physicianId] && bookedAppointments[physicianId][date];
+    };
+  
+    const bookAppointment = (physicianId, date, time) => {
+      if (!bookedAppointments[physicianId]) {
+        bookedAppointments[physicianId] = {};
+      }
+      bookedAppointments[physicianId][date] = time;
+    };
+  
     // Initialization
     const init = () => {
       $('#app').innerHTML = `
         <div class="flex flex-col md:flex-row min-h-screen">
-          <div class="w-full md:w-1/2 bg-white bg-opacity-90 p-4 md:p-8 overflow-y-auto">
+          <div class="w-full md:w-1/2 p-4 md:p-8 overflow-y-auto">
             <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center text-blue-800">Physician Appointment Scheduling</h1>
             <div id="appointmentForm"></div>
           </div>
@@ -217,10 +306,9 @@
         </div>
       `;
       $('#appointmentForm').innerHTML = AppointmentForm();
-      $('#physicianSelect').addEventListener('change', handlePhysicianChange);
+      $('#specializationSelect').addEventListener('change', handleSpecializationChange);
       $('#calendar').addEventListener('click', handleDateSelection);
       $('#bookAppointment').addEventListener('click', handleAppointmentSubmit);
-      updateCalendar();
     };
   
     // Start the application
