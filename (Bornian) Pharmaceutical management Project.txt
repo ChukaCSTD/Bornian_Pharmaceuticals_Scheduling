@@ -1,0 +1,22 @@
+Pharmaceutical management Project
+
+Bornian pharmaceuticals is a large-scale pharmaceutical company, which client base is very large with over a hundred staff, but few specialized physicians.
+Clients are often required to book appointments to be attended to by a physician in their area of specialization, get a diagnose, and prescription given.
+Appointments are usually done physically, since many criteria has to be met before an appointment can be fully booked.
+But, most times due to their large number of clients, it is often a times difficult to attend to emergency cases without prior scheduled appointment, as physician may not be available to attend to the clients, or already booked by another client.
+This tends to be difficult the Bornian pharmaceuticals, and its management.
+As a developer, you were called upon to help reduce the burden on the company by managing most of the affairs, like appointment booking, and client self-care automatically, instead of manually.
+You are required to:
+1. Create a means whereby clients can visit the system
+2. Clients should be able to create an appointment to meet with a physician, and a receipt shown to them for verification purpose.
+3. Clients should be able to get an emergency diagnose based on the kind of symptoms they are presenting. A medicine can be prescribed to the client based on the diagnose, and the drugs should be administered to the client, so the client can go purchase it without having to manually go to the physician.
+
+Additional Task:
+1. You are required to make known the available physicians, when clients want to book an appointment on the system, the time for appointment, and the day of appointment.
+2. Give appropriate diagnose based on client symptoms
+3. Administer appropriate drugs based on clients diagnose.
+
+Note:Your logic should be very sound and understandable.
+
+Goodluck,
+Rework Academy.

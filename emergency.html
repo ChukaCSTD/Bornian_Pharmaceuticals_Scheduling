@@ -62,26 +62,37 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 1024px) {
+            .desktop-menu {
+                display: flex;
+            }
+            #menuBtn {
+                display: none;
+            }
+        }
+        @media (max-width: 1023px) {
             .desktop-menu {
                 display: none;
+            }
+            #menuBtn {
+                display: block;
             }
         }
     </style>
 </head>
-<body class="sm:hidden md:hidden min-h-screen flex flex-col items-center justify-center">
+<body class="min-h-screen flex flex-col items-center justify-center">
     <nav class="fixed top-0 left-0 right-0 z-50 text-slate-700 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center">
+            <a href="index.html" class="flex items-center pl-[640px]">
                 <img src="images/logo.png" alt="Bornian Pharmaceuticals Logo" class="h-16 mr-2">
                 <span class="font-bold text-xl">Bornian Pharmaceuticals</span>
             </a>
-            <ul class="sm:hidden md:hidden desktop-menu flex space-x-8 text-xl">
+            <ul class="desktop-menu hidden lg:flex space-x-8 text-xl pr-[50px]">
                 <li><a href="index.html" class="hover:text-gray-300 hover:underline">Home</a></li>
                 <li><a href="booking.html" class="hover:text-gray-300 hover:underline">Booking</a></li>
                 <li><a href="emergency.html" class="hover:text-gray-300 hover:underline">Diagnosis</a></li>
             </ul>
-            <button id="menuBtn" class="md:hidden">
+            <button id="menuBtn" class="lg:hidden">
                 <img src="images/menu.png" alt="Menu" class="h-8">
             </button>
         </div>
@@ -97,7 +108,7 @@
 
     <div id="overlay" class="overlay"></div>
 
-    <div id="app" class="w-full max-w-md px-4 mt-24">
+    <div id="app" class="w-full max-w-md px-4 mt-24 absolute left-16 top-[40px]">
         <div class="content-wrapper p-8">
             <!-- The diagnos.js script will populate this div -->
         </div>
